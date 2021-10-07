@@ -8,53 +8,110 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import br.org.generation.blogpessoal.model.Usuario;
 
-public class UserDetailsImpl implements UserDetails{
-		private static final long serialVersionUID = 1L;
+/**
+ * Classe UserDetailsImpl 
+ * 
+ * Implementa a interface UserDetails, que descreve o usuário para 
+ * o Spring Security,ou seja, detalha as caracteríticas do usuário.
+ * 
+ * Por se tratar de uma implementação de uma interface, a classe
+ * deve ter em seu nome o sufixo Impl para indicar que se trata de
+ * uma implementação.
+ * 
+ * As características descritas na interface UserDetails são:
+ * 
+ * 1) Credenciais do usuário (Username e Password)
+ * 2) As Autorizações do usuário (o que ele pode e não pode fazer),
+ *    através da Collection authorities do tipo GrantedAuthority
+ * 3) As Restrições (isAccountNonExpired(), isAccountNonLocked(), 
+ *    isCredentialsNonExpired() e isEnabled()) da conta do usuário.
+ */
 
-		private String userName;
-		private String password;
-		private List<GrantedAuthority> authorities;
+public class UserDetailsImpl implements UserDetails {
+	private static final long serialVersionUID = 1L;
 
-		public UserDetailsImpl(Usuario user) {
-			this.userName = user.getUsuario();
-			this.password = user.getSenha();		
-		}
+	private String userName;
+	private String password;
+	private List<GrantedAuthority> authorities;
 
-		public UserDetailsImpl() {}
+	/**
+	 * Método construtor com parâmetros 
+	 * 
+	 * Observe que este método Construtor recebe um objeto Usuario e
+	 * recupera os dados necessários através dos respectivos métodos Get
+	 */
 
-		@Override
-		public Collection<? extends GrantedAuthority> getAuthorities() {
-			return authorities;
-		}
+	public UserDetailsImpl(Usuario usuario) {
+		this.userName = usuario.getUsuario();
+		this.password = usuario.getSenha();
+	}
 
-		@Override
-		public String getPassword() {
-			return password;
-		}
+	/**
+	 * Método construtor sem parâmetros 
+	 */
 
-		@Override
-		public String getUsername() {
+	public UserDetailsImpl() {	}
 
-			return userName;
-		}
+	/**
+	 *  Sobrecarrega (@Override) o método que retorna as Autorizações
+	 *  da conta do usuário. Nesta implementação, não há nenhuma autorização
+	 *  negada
+	 */
 
-		@Override
-		public boolean isAccountNonExpired() {
-			return true;
-		}
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return authorities;
+	}
 
-		@Override
-		public boolean isAccountNonLocked() {
-			return true;
-		}
+	@Override
+	public String getPassword() {
+		return password;
+	}
 
-		@Override
-		public boolean isCredentialsNonExpired() {
-			return true;
-		}
+	@Override
+	public String getUsername() {
 
-		@Override
-		public boolean isEnabled() {
-			return true;
-		}
-	} 
+		return userName;
+	}
+
+	/**
+	 *  Sobrecarrega (@Override) o método que Indica se a conta do usuário 
+	 *  expirou.
+	 */
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	/**
+	 *  Sobrecarrega (@Override) o método que Indica se o usuário 
+	 *  está bloqueado ou desbloqueado.
+	 */
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	/**
+	 *  Sobrecarrega (@Override) o método que indica se as 
+	 *  credenciais do usuário (senha) expiraram.  
+	 */
+	
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	/**
+	 *  Sobrecarrega (@Override) o método que Indica se o usuário 
+	 *  está habilitado ou desabilitado.
+	 *  Se mudar para false nenhum usuário conseguirá logar.
+	 */
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
+}
