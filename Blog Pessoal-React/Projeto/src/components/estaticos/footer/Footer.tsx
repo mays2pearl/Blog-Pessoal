@@ -16,7 +16,7 @@ function Footer() {
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a href="https://github.com/mays2pearl" target="_blank">
-                                <GitHub style={{ fontSize: 60, color: "white" }} />
+                                <GitHub style={{ fontSize: 50, color: "white" }} />
                             </a>
                             <a href="https://www.linkedin.com/in/maysa-andrade-maysa-andrade/" target="_blank">
                                 <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
