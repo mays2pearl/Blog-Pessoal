@@ -12,13 +12,17 @@ function Home() {
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className='titulo'>expresse aqui os seus pensamentos e opiniões!</Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}>
+                        <Box marginRight={1} letterSpacing={5}>
                         </Box>
                         <Button variant="outlined" className='botao'>Ver Postagens</Button>
                     </Box>
+                    <Box display="flex" justifyContent="center">
+                        <Box marginRight={1}>
+                        </Box>
+                        <Button variant="outlined" className='botao'>Cadastrar Tema</Button>
+                    </Box>
                 </Grid>
-                <Grid item xs={6} >
-     <img src="https://cdn.discordapp.com/attachments/882496817550483510/902791004803989525/flores.png" alt="" width="500px" height="700px"/>
+                <Grid item xs={6} className='imagem'>
      </Grid>
                 <Grid xs={12} className='postagens'>
                 </Grid>
