@@ -2,7 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { api } from '../../service/Service';
+import { login } from '../../service/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 
@@ -35,9 +35,7 @@ function Login() {
         async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();
             try{
-                const resposta = await api.post(`/usuarios/logar`, userLogin)
-                setToken(resposta.data.token)
-
+                await login(`/usuarios/logar`, userLogin, setToken)
                 alert('Usuário logado com sucesso!');
             }catch(error){
                 alert('Dados do usuário inconsistentes. Erro ao logar!');
