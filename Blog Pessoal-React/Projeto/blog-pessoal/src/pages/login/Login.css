@@ -17,3 +17,8 @@
     background-size: cover;
     background-position: center;
 }
+.botao{
+    border-color: white !important;
+    background-color: #D96690 !important;
+    color: white !important;
+}
