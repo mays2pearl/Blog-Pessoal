@@ -8,9 +8,9 @@
 }
 
 .botao{
-    border-color: white !important;
-    background-color: #ff1493 !important;
-    color: white !important;
+    border-color: white ;
+    background-color: #ff1493 ;
+    color: white ;
 }
 
 .postagens{
@@ -25,4 +25,7 @@
     min-height: 100vh;
     background-size: cover;
     background-position: center;
+}
+.text-decoration-none{
+    text-decoration: none;
 }

@@ -14,9 +14,9 @@ function TabPostagem() {
     <>
       <TabContext value={value}>
         <AppBar position="static">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
+          <Tabs centered className='caixa3' onChange={handleChange}>
             <Tab label="Todas as postagens" value="1"/>
-            <Tab label="Sobre-nós" value="2" />
+            <Tab label="Um pouco sobre mim:" value="2" />
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
@@ -25,8 +25,8 @@ function TabPostagem() {
           </Box>
         </TabPanel>
         <TabPanel value="2">
-          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
+          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Um pouco sobre mim:</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Sou uma pessoa que sempre esta em busca de algo melhor, de ser uma pessoa melhor, por isso venho trilhando na minha vida profissional caminhos de sucesso e orgulho! Comecei trabalhando com vendas de produtos financeiros, migrei para vendas na área comercial/indústria interna, onde desenvolvi habilidades de negociação em vendas! Buscando crescer numa área profissional valorizada, que me proporcione uma condição financeira estável e confortável, e que conciliasse com algo que eu goste e com o qual eu tinha afinidade, iniciei meus estudos em programação e desenvolvimento de sistemas e aplicativos. Nessa área de tecnologia se destaca o curso de IOS Mobile na Digital House e o BootCamp java fullStack na Generation Brasil.</Typography>
         </TabPanel>
       </TabContext>
     </>
